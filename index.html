@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Name — Aspiring Software Engineer, Singapore</title>
+<meta name="description" content="Looking to be a software engineer, based in Singapore. Learning to build, deploy and ship with AI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  :root {
+    --bg: #10171A;
+    --panel: #1A2226;
+    --panel-hi: #212B30;
+    --line: #2B3639;
+    --ink: #E9E4D8;
+    --ink-dim: #97A0A0;
+    --amber: #E8A33D;
+    --sage: #6FA08A;
+    --red: #C6604B;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', system-ui, sans-serif;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 48px 48px;
+    background-position: -1px -1px;
+  }
+
+  .mono { font-family: 'IBM Plex Mono', monospace; }
+
+  .panel {
+    background: var(--panel);
+    border: 1px solid var(--line);
+  }
+
+  .panel-hi {
+    background: var(--panel-hi);
+    border: 1px solid var(--line);
+  }
+
+  .dot {
+    box-shadow: 0 0 0 0 rgba(111, 160, 138, 0.6);
+    animation: pulse 2.4s infinite;
+  }
+
+  @keyframes pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(111, 160, 138, 0.55); }
+    70%  { box-shadow: 0 0 0 8px rgba(111, 160, 138, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(111, 160, 138, 0); }
+  }
+
+  .chip {
+    border: 1px solid var(--line);
+    color: var(--ink-dim);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.02em;
+  }
+
+  .fade-up {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-up.in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .card-hover {
+    transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+  }
+  .card-hover:hover {
+    transform: translateY(-3px);
+    border-color: var(--amber);
+  }
+
+
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--amber);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .fade-up, .dot { transition: none; animation: none; opacity: 1; transform: none; }
+  }
+</style>
+</head>
+<body class="min-h-screen">
+
+  <!-- STATUS BAR -->
+  <div class="sticky top-0 z-50 panel border-b" style="border-color: var(--line);">
+    <div class="max-w-5xl mx-auto px-5 py-2.5 flex items-center justify-between mono text-xs" style="color: var(--ink-dim);">
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full inline-block dot" style="background: var(--sage);"></span>
+        <span style="color: var(--ink);">STATUS:</span>
+        <span style="color: var(--sage);">OPEN TO WORK</span>
+      </div>
+      <div class="hidden sm:flex items-center gap-4">
+        <span>SGT <span id="clock">--:--:--</span></span>
+        <span class="hidden md:inline">·</span>
+        <span class="hidden md:inline">last deploy: <span style="color: var(--ink);">2026.11.17</span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <header class="max-w-5xl mx-auto px-5 pt-16 pb-14 fade-up">
+    <p class="mono text-xs mb-4" style="color: var(--amber);">~/portfolio $ whoami</p>
+    <h1 class="text-4xl sm:text-6xl font-bold tracking-tight leading-tight">Your Name</h1>
+    <p class="mt-3 text-lg sm:text-xl" style="color: var(--ink-dim);">Looking to be a software engineer, based in Singapore</p>
+    <p class="mt-5 max-w-xl text-base leading-relaxed" style="color: var(--ink-dim);">
+      Just a unc learning how to build, deploy and ship with AI. Mostly small projects
+      so far: I break things, fix them, and push them live to see what sticks.
+    </p>
+  </header>
+
+  <!-- WORKED WITH -->
+  <section id="worked-with" class="max-w-5xl mx-auto px-5 py-14 fade-up">
+    <div class="flex items-baseline gap-3 mb-8">
+      <span class="mono text-sm" style="color: var(--amber);">01</span>
+      <h2 class="text-2xl font-bold tracking-tight">Worked with</h2>
+      <span class="flex-1 border-t" style="border-color: var(--line);"></span>
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-4">
+      <div class="panel rounded-lg p-5">
+        <p class="mono text-[11px] mb-3" style="color: var(--amber);">BACKEND</p>
+        <div class="flex flex-wrap gap-1.5">
+          <span class="chip px-2 py-0.5 rounded">Java (Spring Boot)</span>
+          <span class="chip px-2 py-0.5 rounded">Python</span>
+          <span class="chip px-2 py-0.5 rounded">SQL</span>
+        </div>
+      </div>
+      <div class="panel rounded-lg p-5">
+        <p class="mono text-[11px] mb-3" style="color: var(--amber);">FRONTEND</p>
+        <div class="flex flex-wrap gap-1.5">
+          <span class="chip px-2 py-0.5 rounded">JavaScript</span>
+          <span class="chip px-2 py-0.5 rounded">HTML</span>
+          <span class="chip px-2 py-0.5 rounded">CSS</span>
+        </div>
+      </div>
+      <div class="panel rounded-lg p-5">
+        <p class="mono text-[11px] mb-3" style="color: var(--amber);">DATA</p>
+        <div class="flex flex-wrap gap-1.5">
+          <span class="chip px-2 py-0.5 rounded">SQL</span>
+          <span class="chip px-2 py-0.5 rounded">Jupyter Notebook</span>
+          <span class="chip px-2 py-0.5 rounded">Tableau (basic)</span>
+          <span class="chip px-2 py-0.5 rounded">Power BI (basic)</span>
+        </div>
+      </div>
+      <div class="panel rounded-lg p-5">
+        <p class="mono text-[11px] mb-3" style="color: var(--amber);">CLOUD &amp; DEVOPS</p>
+        <div class="flex flex-wrap gap-1.5">
+          <span class="chip px-2 py-0.5 rounded">AWS (EC2)</span>
+          <span class="chip px-2 py-0.5 rounded">Docker</span>
+          <span class="chip px-2 py-0.5 rounded">Jenkins</span>
+          <span class="chip px-2 py-0.5 rounded">GitLab CI</span>
+          <span class="chip px-2 py-0.5 rounded">GitHub Pages</span>
+          <span class="chip px-2 py-0.5 rounded">GitHub Actions</span>
+        </div>
+      </div>
+      <div class="panel rounded-lg p-5">
+        <p class="mono text-[11px] mb-3" style="color: var(--amber);">TOOLS</p>
+        <div class="flex flex-wrap gap-1.5">
+          <span class="chip px-2 py-0.5 rounded">Git/GitHub</span>
+          <span class="chip px-2 py-0.5 rounded">SVN</span>
+          <span class="chip px-2 py-0.5 rounded">Eclipse</span>
+          <span class="chip px-2 py-0.5 rounded">Visual Studio</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="max-w-5xl mx-auto px-5 py-14 fade-up">
+    <div class="flex items-baseline gap-3 mb-8">
+      <span class="mono text-sm" style="color: var(--amber);">02</span>
+      <h2 class="text-2xl font-bold tracking-tight">Projects</h2>
+      <span class="flex-1 border-t" style="border-color: var(--line);"></span>
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-5">
+
+      <!-- Portfolio -->
+      <article class="panel card-hover rounded-lg p-6 flex flex-col">
+        <div class="flex items-center justify-between">
+          <h3 class="text-lg font-semibold">Portfolio</h3>
+          <span class="mono text-[11px] flex items-center gap-1.5" style="color: var(--amber);">
+            <span class="w-1.5 h-1.5 rounded-full inline-block" style="background: var(--amber);"></span>ALWAYS IMPROVING
+          </span>
+        </div>
+        <p class="mt-2.5 text-sm leading-relaxed flex-1" style="color: var(--ink-dim);">
+          This site. A single HTML file with no build step, deployed on GitHub Pages.
+          I keep tweaking it as I learn, so it's never really finished.
+        </p>
+        <div class="mt-4 flex flex-wrap gap-1.5">
+          <span class="chip px-2 py-0.5 rounded">HTML</span>
+          <span class="chip px-2 py-0.5 rounded">Tailwind CDN</span>
+          <span class="chip px-2 py-0.5 rounded">Vanilla JS</span>
+          <span class="chip px-2 py-0.5 rounded">GitHub Pages</span>
+        </div>
+        <div class="mt-5 flex gap-4 mono text-xs">
+          <a href="#" style="color: var(--ink-dim);" class="hover:underline">repo →</a>
+        </div>
+      </article>
+
+      <!-- learn-nmixx-members -->
+      <article class="panel card-hover rounded-lg p-6 flex flex-col">
+        <div class="flex items-center justify-between">
+          <h3 class="text-lg font-semibold">learn-nmixx-members</h3>
+          <span class="mono text-[11px] flex items-center gap-1.5" style="color: var(--sage);">
+            <span class="w-1.5 h-1.5 rounded-full inline-block" style="background: var(--sage);"></span>ACTIVE
+          </span>
+        </div>
+        <p class="mt-2.5 text-sm leading-relaxed flex-1" style="color: var(--ink-dim);">
+          A picture guessing game for learning the faces of NMIXX. Three modes:
+          Classic (6 rounds, 4 hearts), Endless (tracks your best score), and a timed
+          two-member challenge.
+        </p>
+        <div class="mt-4 flex flex-wrap gap-1.5">
+          <span class="chip px-2 py-0.5 rounded">Browser game</span>
+          <span class="chip px-2 py-0.5 rounded">Static site</span>
+          <span class="chip px-2 py-0.5 rounded">No build step</span>
+        </div>
+        <div class="mt-5 flex gap-4 mono text-xs">
+          <a href="https://github.com/TheHubCube/learn-nmixx-members" target="_blank" rel="noopener" style="color: var(--amber);" class="hover:underline">repo →</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- CONNECT -->
+  <section id="connect" class="max-w-5xl mx-auto px-5 py-14 fade-up">
+    <div class="flex items-baseline gap-3 mb-8">
+      <span class="mono text-sm" style="color: var(--amber);">03</span>
+      <h2 class="text-2xl font-bold tracking-tight">Connect</h2>
+      <span class="flex-1 border-t" style="border-color: var(--line);"></span>
+    </div>
+
+    <div class="panel rounded-lg p-6 mono text-sm space-y-3 max-w-lg">
+      <p style="color: var(--ink-dim);">$ cat contact.txt</p>
+      <p><span style="color: var(--amber);">github</span>&nbsp;&nbsp;<a href="https://github.com/yourusername" class="hover:underline" style="color: var(--ink);">github.com/yourusername</a></p>
+      <p><span style="color: var(--amber);">linkedin</span> <a href="https://linkedin.com/in/yourusername" class="hover:underline" style="color: var(--ink);">linkedin.com/in/yourusername</a></p>
+      <p style="color: var(--ink-dim);">$ <span class="border-r-2 animate-pulse" style="border-color: var(--ink-dim);">&nbsp;</span></p>
+    </div>
+  </section>
+
+  <footer class="max-w-5xl mx-auto px-5 py-10 mono text-xs" style="color: var(--ink-dim);">
+    <div class="border-t pt-6" style="border-color: var(--line);">
+      © 2026 Your Name. Built with no build step.
+    </div>
+  </footer>
+
+<script>
+  // Live SGT clock
+  function updateClock() {
+    const now = new Date();
+    const sgt = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Singapore' }));
+    const hh = String(sgt.getHours()).padStart(2, '0');
+    const mm = String(sgt.getMinutes()).padStart(2, '0');
+    const ss = String(sgt.getSeconds()).padStart(2, '0');
+    document.getElementById('clock').textContent = `${hh}:${mm}:${ss}`;
+  }
+  updateClock();
+  setInterval(updateClock, 1000);
+
+  // Fade-up on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
